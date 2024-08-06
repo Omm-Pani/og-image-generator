@@ -11,6 +11,8 @@ export default function PostCreator() {
     title: "",
     content: "",
   };
+  console.log(import.meta.env.VITE_PUBLIC_SERVER_URL);
+
   const [postObj, setPostObj] = useState(INITIAL_POST_OBJ);
   const [image, setImage] = useState<File>();
   const [ogImageUrl, setOgImageUrl] = useState("");
@@ -41,7 +43,7 @@ export default function PostCreator() {
     setIsLoading(true);
     try {
       const response = await axios.post(
-        "http://localhost:3001/generate-og-image",
+        `${import.meta.env.VITE_PUBLIC_SERVER_URL}/generate-og-image`,
         formData,
         {
           headers: {
