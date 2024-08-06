@@ -11,7 +11,6 @@ export default function PostCreator() {
     title: "",
     content: "",
   };
-  console.log(import.meta.env.VITE_PUBLIC_SERVER_URL);
 
   const [postObj, setPostObj] = useState(INITIAL_POST_OBJ);
   const [image, setImage] = useState<File>();
