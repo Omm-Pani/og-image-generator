@@ -20,7 +20,12 @@ export default function PostPreview({
         <div>
           <Helmet>
             {ogImageUrl && <meta property="og:image" content={ogImageUrl} />}
+            {image && (
+              <meta property="og:image" content={URL.createObjectURL(image)} />
+            )}
+
             <meta property="og:title" content={postObj.title} />
+
             <meta property="og:description" content={postObj.content} />
           </Helmet>
 
